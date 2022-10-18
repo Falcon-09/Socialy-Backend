@@ -22,8 +22,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 const corsOptions ={
-  origin:'*', 
-  credentials:true,            //access-control-allow-credentials:true
+  origin:'*',            //access-control-allow-credentials:true
   methods: ["GET","POST","PUT"],
   allowedHeaders: [
     "authorization",
