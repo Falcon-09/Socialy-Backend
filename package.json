@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "node": "16.17.0",
   "scripts": {
     "start": "nodemon index.js"
   },
