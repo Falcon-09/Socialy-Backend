@@ -1504,6 +1504,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nodemailer@npm:^6.8.0":
+  version: 6.8.0
+  resolution: "nodemailer@npm:6.8.0"
+  checksum: e1827df714d207a00f1bf8012e767826862467b72440fc9c37cf238a14d01a4c591b7657f4d1805bfb2764883c07aa9f2e31ee96a5fec51ccf1e6ad6dd01bd1d
+  languageName: node
+  linkType: hard
+
 "nodemon@npm:^2.0.16":
   version: 2.0.20
   resolution: "nodemon@npm:2.0.20"
@@ -1916,6 +1923,7 @@ __metadata:
     jsonwebtoken: ^8.5.1
     mongoose: ^6.3.1
     multer: ^1.4.5-lts.1
+    nodemailer: ^6.8.0
     nodemon: ^2.0.16
     path: ^0.12.7
   languageName: unknown

@@ -59,12 +59,12 @@ export const updateUser = async (req, res) => {
       const token = jwt.sign(
         { username: user.username, id: user._id },
         process.env.JWTKEY,
-        { expiresIn: "1h" }
+        { expiresIn: "7d" }
       );
       console.log({user, token})
       res.status(200).json({user, token});
     } catch (error) {
-      console.log("Error agya hy")
+      console.log("Error")
       res.status(500).json(error);
     }
   } else {
@@ -149,3 +149,23 @@ export const unfollowUser = async (req, res) => {
     }
   }
 };
+
+
+export const getUserVer = async (req,res) =>{
+  const {username} = req.body
+
+  try{
+    
+    const user = await UserModel.findOne({username: username})
+    if (user) {
+      const { password, ...otherDetails } = user._doc;
+
+      res.status(200).json(otherDetails);
+    } else {
+      res.status(404).json("No such User");
+    }
+  } 
+  catch (error) {
+    res.status(500).json(error);
+  }
+}

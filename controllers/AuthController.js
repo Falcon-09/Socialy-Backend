@@ -1,6 +1,7 @@
 import UserModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { otpHandler } from '../utils/mail.js' 
 
 import dotenv from 'dotenv'
 
@@ -22,13 +23,15 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
 
     // changed
-    const user = await newUser.save();
-    const token = jwt.sign(
-      { username: user.username, id: user._id },
-      process.env.JWTKEY,
-      { expiresIn: "1h" }
-    );
-    res.status(200).json({ user, token });
+    const user = await newUser.save()
+    .then((result) => {
+      otpHandler(result,res)
+  })
+  .catch((err) => {
+      console.log(err)
+      res.json({message: err.message})
+  })
+    
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -49,10 +52,13 @@ export const loginUser = async (req, res) => {
       if (!validity) {
         res.status(400).json("wrong password");
       } else {
+        const chkverify = user.verified
+
+        if(!chkverify) return res.status(401).json({message: "Verify your email"}) 
         const token = jwt.sign(
           { username: user.username, id: user._id },
           process.env.JWTKEY,
-          { expiresIn: "1h" }
+          { expiresIn: "7d" }
         );
         res.status(200).json({ user, token });
       }

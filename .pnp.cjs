@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsonwebtoken", "npm:8.5.1"],\
             ["mongoose", "npm:6.6.5"],\
             ["multer", "npm:1.4.5-lts.1"],\
+            ["nodemailer", "npm:6.8.0"],\
             ["nodemon", "npm:2.0.20"],\
             ["path", "npm:0.12.7"]\
           ],\
@@ -1775,6 +1776,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["nodemailer", [\
+        ["npm:6.8.0", {\
+          "packageLocation": "./.yarn/cache/nodemailer-npm-6.8.0-8280b33fb7-e1827df714.zip/node_modules/nodemailer/",\
+          "packageDependencies": [\
+            ["nodemailer", "npm:6.8.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["nodemon", [\
         ["npm:2.0.20", {\
           "packageLocation": "./.yarn/unplugged/nodemon-npm-2.0.20-2fea8f7bf9/node_modules/nodemon/",\
@@ -2229,6 +2239,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsonwebtoken", "npm:8.5.1"],\
             ["mongoose", "npm:6.6.5"],\
             ["multer", "npm:1.4.5-lts.1"],\
+            ["nodemailer", "npm:6.8.0"],\
             ["nodemon", "npm:2.0.20"],\
             ["path", "npm:0.12.7"]\
           ],\
