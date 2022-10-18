@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "node": "16.17.0",
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
