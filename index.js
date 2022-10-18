@@ -26,6 +26,7 @@ const corsOptions ={
   credentials:true,            //access-control-allow-credentials:true
   methods: ["GET","POST","PUT"],
   allowedHeaders: [
+    "authorization",
     "Access-Control-Allow-Origin",
     "Access-Control-Allow-Headers",
     "X-Requested-With",
@@ -36,7 +37,7 @@ const corsOptions ={
     "Connection",
     "Cache-Control",
   ],
-  preflightContinue: true,
+  preflightContinue: false,
   optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
