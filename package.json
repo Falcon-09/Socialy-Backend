@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "engines" : { 
-    "npm" : ">=8.0.0 <9.0.0",
-    "node" : ">=16.0.0 <17.0.0"
+  "engines": {
+    "node": "17.0.1",
+    "npm": "8.1.1"
   },
   "scripts": {
     "start": "nodemon index.js"
