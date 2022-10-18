@@ -24,7 +24,16 @@ const corsOptions ={
   origin:'*', 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200,
-  allowedHeaders: '*'
+  allowedHeaders: [
+    "Access-Control-Allow-Headers",
+    "X-Requested-With",
+    "X-Access-Token",
+    "Content-Type",
+    "Host",
+    "Accept",
+    "Connection",
+    "Cache-Control",
+  ]
 }
 app.use(cors(corsOptions));
 // to serve images inside public folder
