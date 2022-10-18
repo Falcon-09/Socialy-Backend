@@ -22,9 +22,9 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 const corsOptions ={
-  origin:'https://1-socialy-1.netlify.app', 
+  origin:'*', 
   credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200,
+  methods: ["GET","POST","PUT"],
   allowedHeaders: [
     "Access-Control-Allow-Origin",
     "Access-Control-Allow-Headers",
@@ -35,7 +35,9 @@ const corsOptions ={
     "Accept",
     "Connection",
     "Cache-Control",
-  ]
+  ],
+  preflightContinue: true,
+  optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
 // to serve images inside public folder
