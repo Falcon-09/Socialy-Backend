@@ -26,6 +26,7 @@ const corsOptions ={
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200,
   allowedHeaders: [
+    "Access-Control-Allow-Origin",
     "Access-Control-Allow-Headers",
     "X-Requested-With",
     "X-Access-Token",
