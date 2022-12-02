@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "npm install",
+    "build": "npm install"
   },
   "author": "",
   "license": "ISC",
