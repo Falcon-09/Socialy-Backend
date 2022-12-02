@@ -5,5 +5,6 @@ const router = express.Router()
 router.post('/', createChat);
 router.get('/:userId', userChats);
 router.get('/find/:firstId/:secondId', findChat);
+router.delete('/:firstId/:secondId', deleteChat);
 
 export default router
