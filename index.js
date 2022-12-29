@@ -53,7 +53,7 @@ const CONNECTION =process.env.MONGO_DB;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_DB);
+    const conn = await mongoose.connect(CONNECTION);
     console.log(`MongoDB Connected`);
   } catch (error) {
     console.log(error);
