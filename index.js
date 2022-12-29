@@ -49,10 +49,17 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 const CONNECTION =process.env.MONGO_DB;
-mongoose
-  .connect(CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
-  .catch((error) => console.log(`${error} did not connect`));
+
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_DB);
+    console.log(`MongoDB Connected`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
 
 
 app.use('/auth', AuthRoute);
@@ -62,3 +69,9 @@ app.use('/upload', UploadRoute)
 app.use('/chat', ChatRoute)
 app.use('/message', MessageRoute)
 app.use('/verify',VerifyRoute)
+
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
+})
